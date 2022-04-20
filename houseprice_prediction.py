@@ -7,32 +7,30 @@ Original file is located at
     https://colab.research.google.com/drive/1F-MrX-gJQm4DlBfB00yXi0VwlplTb9TN
 """
 
-!pip install numpy
-!pip install pandas as pd
-!pip install matplotlib
-!pip install scikit-learn
+#insatlling necessary libraries
+!pip install pandas as pd       #for sumarize the data
+!pip install matplotlib         #for visualization
+!pip install scikit-learn        #for algorithims
 
+#import local files into colab
 from google.colab import files
 uploaded = files.upload()
 
 import pandas as pd
-from  matplotlib import pyplot as plt 
-data = pd.read_csv("dataset.csv")
+data = pd.read_csv("dataset.csv")          #load the dataset
 print(data)
 
 x=data.drop('price',axis='columns')    #input 
 print(x)        
-y=data.price  #output
+y=data.price                          #output
 print(y)
 
 """SUMMARIZE THE DATA"""
-
 print(data.shape)
-
 print(data.head(5))
 
 """**VISUALIZE THE PLOT**"""
-
+from  matplotlib import pyplot as plt 
 plt.xlabel("area",c="b")
 plt.ylabel("price",c="b")
 plt.plot(x,y,c="y",marker="o")
